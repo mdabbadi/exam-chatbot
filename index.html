@@ -1,12 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Exams Chatbot</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/themes/df-messenger-default.css">
-  <script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
+  <script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger.js"></script>
+
   <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #e0f7fa, #fce4ec);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 60px 20px 100px;
+      min-height: 100vh;
+    }
+
+    h1 {
+      font-size: 3em;
+      color: #333;
+      margin-bottom: 20px;
+      animation: fadeInDown 1s ease;
+    }
+
+    p {
+      font-size: 1.2em;
+      color: #555;
+      max-width: 700px;
+      animation: fadeIn 2s ease;
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
     df-messenger {
       z-index: 999;
       position: fixed;
@@ -20,18 +68,17 @@
     }
   </style>
 </head>
+
 <body>
-  <h1>Welcome to the Exams Help Page</h1>
-  <p>Use the chatbot below to ask any questions related to your exams.</p>
+  <h1>Welcome to the Exams Help Center</h1>
+  <p>Have a question about your upcoming exams? Our smart assistant is ready to help you 24/7 — just ask anything below.</p>
 
   <df-messenger
     project-id="molten-crowbar-461210-p6"
     agent-id="bd3af9fa-4163-469c-83c9-97a2d12b6d3c"
     language-code="en"
     max-query-length="-1">
-    <df-messenger-chat-bubble
-      chat-title="Exams Chatpot">
-    </df-messenger-chat-bubble>
+    <df-messenger-chat-bubble chat-title="Exams Chatpot"></df-messenger-chat-bubble>
   </df-messenger>
 </body>
 </html>
